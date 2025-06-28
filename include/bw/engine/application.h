@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "gl_common.h"
+#include "gl.h"
 
 namespace bw::engine {
     class Application {
@@ -13,7 +13,7 @@ namespace bw::engine {
         Application(int width, int height, const char* title);
         ~Application();
 
-        glfw::Window& getWindow() const {
+        [[nodiscard]] glfw::Window& getWindow() const {
             return *pWindow_;
         }
     };

@@ -17,6 +17,9 @@ set(LIBRARY_ALIAS bw::engine)
 
 add_library(${LIBRARY_NAME}
         src/application.cpp
+        src/engine.cpp
+        src/game.cpp
+        src/input.cpp
 )
 add_library(${LIBRARY_ALIAS} ALIAS ${LIBRARY_NAME})
 

@@ -1,5 +1,4 @@
 #pragma once
-#include <memory>
 
 #include "camera.h"
 
@@ -12,6 +11,6 @@ namespace bw::engine {
 
         virtual void update(float deltaTime) {}
 
-        virtual void render(const std::shared_ptr<Camera>& camera) {}
+        virtual void render(const Camera& camera) {}
     };
 }

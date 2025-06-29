@@ -21,7 +21,6 @@ namespace bw::engine {
         window_.framebufferSizeEvent.set(
             [this](const int width, const int height) {
                 glad::Viewport(width, height);
-                camera_->set_size({width, height});
             });
         window_.cursorPosEvent.set(
             [](const double x, const double y) {
@@ -75,7 +74,7 @@ namespace bw::engine {
         glad::ClearColor(0.1f, 0.4f, 0.7f);
 
         for (const auto& gameObject : gameObjects_) {
-            gameObject->render(camera_);
+            gameObject->render(*camera_);
         }
     }
 }

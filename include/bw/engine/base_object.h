@@ -3,9 +3,9 @@
 #include "camera.h"
 
 namespace bw::engine {
-    class GameObject {
+    class BaseObject {
     public:
-        virtual ~GameObject() = default;
+        virtual ~BaseObject() = default;
 
         virtual void init() {}
 

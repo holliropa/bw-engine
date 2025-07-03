@@ -2,7 +2,7 @@
 
 #include "application.h"
 #include "engine.h"
-#include "game_object.h"
+#include "base_object.h"
 
 namespace bw::engine {
     class Game {
@@ -10,7 +10,7 @@ namespace bw::engine {
         Application& application_;
         Engine& engine_;
         glfw::Window& window_;
-        std::vector<std::shared_ptr<GameObject>> gameObjects_;
+        std::vector<std::shared_ptr<BaseObject>> gameObjects_;
         std::shared_ptr<Camera> camera_;
 
     public:

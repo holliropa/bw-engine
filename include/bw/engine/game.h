@@ -13,6 +13,17 @@ namespace bw::engine {
         std::vector<std::shared_ptr<BaseObject>> gameObjects_;
         std::shared_ptr<Camera> camera_;
 
+        glad::Framebuffer m_framebuffer;
+        glad::Texture2D m_colorBufferTexture;
+        glad::Renderbuffer m_renderbuffer;
+
+        glad::VertexArray m_vao;
+        glad::ArrayBuffer m_vbo;
+        glad::ElementArrayBuffer m_ebo;
+        GLsizei m_indicesCount{};
+        glad::Program m_shaderProgram;
+        glad::Texture2D m_texture;
+
     public:
         Game(Application& application, Engine& engine);
 
@@ -23,6 +34,9 @@ namespace bw::engine {
         void run();
 
     private:
+        void init_render_target(int width, int height);
+        void update_render_target(int width, int height);
+
         void update(float deltaTime);
         void render();
     };

@@ -12,6 +12,9 @@ add_subdirectory(extern/glad)
 add_subdirectory(extern/glfw)
 add_subdirectory(extern/glm)
 
+add_subdirectory(libs/glad-wrap)
+add_subdirectory(libs/glfw-wrap)
+
 set(LIBRARY_NAME engine)
 set(LIBRARY_ALIAS bw::engine)
 
@@ -28,8 +31,6 @@ target_include_directories(${LIBRARY_NAME}
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>   # Public headers
         $<INSTALL_INTERFACE:include>                            # Installed location
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/glad/include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/glad-wrap/include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/glfw-wrap/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/glm>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/glfw>
         PRIVATE
@@ -41,6 +42,8 @@ target_link_libraries(${LIBRARY_NAME}
         glm
         glad
         glfw
+        bw::glad-wrap
+        bw::glfw-wrap
 )
 
 #enable_testing()

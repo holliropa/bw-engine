@@ -26,7 +26,7 @@ namespace glad {
             Depth24Stencil8 = GL_DEPTH24_STENCIL8,
 
             // Sized Internal Format
-            // R8       = GL_R8,
+            R8       = GL_R8,
             // R8_SNORM = GL_R8_SNORM,
             // R16       = GL_R16,
             // R16_SNORM = GL_R16_SNORM,

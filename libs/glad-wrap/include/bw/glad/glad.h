@@ -3,6 +3,7 @@
 #include "bindings.h"
 #include "blending.h"
 #include "buffer.h"
+#include "buffer_masking.h"
 #include "capabilities.h"
 #include "clearing.h"
 #include "drawing.h"

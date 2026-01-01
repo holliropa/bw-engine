@@ -26,4 +26,21 @@ namespace glad {
         else
             glDisable(static_cast<GLenum>(capability));
     }
+
+    inline bool IsEnabled(Capability capability) {
+        return glIsEnabled(static_cast<GLenum>(capability));
+    }
+
+    class TemporaryCapability {
+        Capability capability_;
+        bool value_;
+
+    public:
+        explicit TemporaryCapability(const Capability capability, const bool value)
+            : capability_(capability), value_(IsEnabled(capability)) {
+            SetCapability(capability, value);
+        }
+
+        ~TemporaryCapability() { SetCapability(capability_, value_); }
+    };
 }

@@ -21,7 +21,32 @@ namespace glad {
                          0,
                          static_cast<GLenum>(format),
                          static_cast<GLenum>(type),
-                         data);
+                         data
+            );
+        }
+
+        void subImage(const GLint level,
+                      const GLint xoffset,
+                      const GLint yoffset,
+                      const GLint zoffset,
+                      const GLsizei width,
+                      const GLsizei height,
+                      const GLsizei depth,
+                      const PixelDataFormat format,
+                      const PixelDataType type,
+                      const GLvoid* const data) {
+            glTexSubImage3D(GL_TEXTURE_3D,
+                            level,
+                            xoffset,
+                            yoffset,
+                            zoffset,
+                            width,
+                            height,
+                            depth,
+                            static_cast<GLenum>(format),
+                            static_cast<GLenum>(type),
+                            data
+            );
         }
     };
 }
